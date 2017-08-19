@@ -1,1 +1,1 @@
-中文版点击：[中文版](https://github.com/Ryanluoxu/learn_linux/blob/master/vi_CN.md)
+中文版点击：[vi_CN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi_CN.md)
