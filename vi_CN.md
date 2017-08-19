@@ -1,3 +1,4 @@
+English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi_EN.md)
 ## 操作状态 ##
 1. 命令模式  
     - 光标的移动
