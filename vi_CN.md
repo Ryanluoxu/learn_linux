@@ -1,5 +1,21 @@
 English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi_EN.md)
-## 操作状态 ##
+
+# 目录
+1. [操作状态](#操作状态)
+2. [vi 指令](#指令)
+    1. [进入插入模式](#进入插入模式)
+    2. [移动光标](#移动光标)
+    3. [删除文字](#删除文字)
+    4. [复制，粘贴，移动](#复制粘贴移动)
+    5. [搜索,替换](#搜索替换)
+    6. [最后行方式命令](#最后行方式命令)
+    7. [寄存器操作](#寄存器操作)
+    8. [选项设置](#选项设置)
+3. [简单应用](#简单应用)
+4. [相关链接](#相关链接)
+
+# 正文
+## 操作状态 <a name="操作状态"></a>
 1. 命令模式  
     - 光标的移动
     - 字符，光标的删除
@@ -14,22 +30,22 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
     - 储存文件，离开编辑器
     - 设置编辑环境：寻找字符串，列出行号等
     
-## vi 指令 ##
+## vi 指令 <a name="指令"></a>
 
 - 用 vi 打开文件： `vi filename`
 
-### 进入插入模式：`i` `a` `o`
+### 进入插入模式：`i` `a` `o` <a name=""></a>
 - 从光标所在之处插入文字：`i`
 - 从光标所在之处等下一个位置输入文字：`a`
 - 插入新的一行，从行首开始输入文字：`o`
 
-### 保存以及退出 (在命令模式下)
+### 保存以及退出 (在命令模式下) <a name="进入插入模式"></a>
 - 将数据存入指定文件：`:w filename`
 - 保存：`:w`
 - 保存并退出：`:wq`
 - 不保存并退出：`:q!`
 
-### 移动光标 (在命令模式下)
+### 移动光标 (在命令模式下) <a name="移动光标"></a>
 - `h`左 `j`下 `k`上 `l`右
 - 下一页：`ctrl+b`
 - 上一页：`ctrl+f`
@@ -53,7 +69,7 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
 - 至屏幕最后行：`L`
 
 
-### 删除文字 (在命令模式下)
+### 删除文字 (在命令模式下) <a name="删除文字"></a>
 - 删除后一个字符：`x`
 - 删除后面#个字符：`#x`
 - 删除前一个字符：`X`
@@ -66,7 +82,7 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
 - 将n1行到n2行之间的内容删除：`:n1,n2 d` 
 
 
-### 复制，粘贴，移动 (在命令模式下)
+### 复制，粘贴，移动 (在命令模式下) <a name="复制粘贴移动"></a>
 - 复制所在位置-字尾：`yw`
 - 复制所在行：`yy`
 - 粘贴：`p`
@@ -76,7 +92,7 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
 - 将n1行到n2行之间的内容拷贝到第n3行下：`:n1,n2 co n3`
 - 将n1行到n2行之间的内容移至到第n3行下：`:n1,n2 m n3`
 
-### 搜索,替换 
+### 搜索,替换 <a name="搜索替换"></a>
 - 向文件尾搜索pattern：`/pattern`
 - 向文件首搜索pattern：`?pattern`-
 - 同一方向重复上一次搜索命令：`n` 
@@ -85,20 +101,20 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
 - 将第n1至n2行中所有p1均用p2替代：`:n1,n2s/p1/p2/g`
 - 将文件中所有p1均用p2替换：`:g/p1/s//p2/g`
 
-### 最后行方式命令
+### 最后行方式命令 <a name="最后行方式命令"></a>
 - `:e filename`：打开文件filename进行编辑 
 - `:!command`：执行shell命令command 
 - `:n1,n2 w!command`：将文件中n1行至n2行的内容作为command的输入并执行之，若不指定n1，n2，则表示将整个文件内容作为command的输入 
 - `:r!command`：将命令command的输出结果放到当前行 
 
-### 寄存器操作 
+### 寄存器操作 <a name="寄存器操作"></a>
 - `"?nyy`：将当前行及其下n行的内容保存到寄存器？中，其中?为一个字母，n为一个数字 
 - `"?nyw`：将当前行及其下n个字保存到寄存器？中，其中?为一个字母，n为一个数字 
 - `"?nyl`：将当前行及其下n个字符保存到寄存器？中，其中?为一个字母，n为一个数字 
 - `"?p`：取出寄存器？中的内容并将其放到光标位置处。这里？可以是一个字母，也可以是一个数字 
 - `ndd`：将当前行及其下共n行文本删除，并将所删内容放到1号删除寄存器中。
 
-### 选项设置 
+### 选项设置 <a name="选项设置"></a>
 - `all`：列出所有选项设置情况 
 - `term`：设置终端类型 
 - `ignorance`：在搜索中忽略大小写 
@@ -112,7 +128,7 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
 - `mesg`：允许vi显示其他用户用write写到自己终端上的信息 
 
 
-### 简单应用
+## 简单应用 <a name="简单应用"></a>
 来源：[linux下vi命令大全](http://www.cnblogs.com/88999660/articles/1581524.html)
 
  1．在一个新文件中读/etc/passwd中的内容，取出用户名部分。 
@@ -152,7 +168,7 @@ English version: [vi_EN](https://github.com/Ryanluoxu/learn_linux/blob/master/vi
  使用命令“:%s#/usr/bin#/bin#g”可以把文件中所有路径/usr/bin换成/bin。也可以使用命令“:%s//usr/bin//bin/g”实现，其中“”是转义字符，表明其后的“/”字符是具有实际意义的字符，不是分隔符。
  
 
-### 相关链接
+## 相关链接 <a name="相关链接"></a>
 1. [vi指令說明(完整版)](http://www2.nsysu.edu.tw/csmlab/unix/vi_command.htm)
 2. []()
 3. []()
