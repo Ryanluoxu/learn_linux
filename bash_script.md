@@ -33,7 +33,7 @@
 ### basic:  
 
 ```
-if[<some test>]
+if[<some test>] && []
 then
 	<command>
 fi
@@ -41,7 +41,7 @@ fi
 example:
 
 ```
-if [ $1 -gt 100]
+if [ $1 -gt 100] 
 then
 	echo it is a large number
 	
@@ -90,4 +90,36 @@ else
 fi
 ```
 
-¯
+### case
+
+```
+case <variable> in
+	<pattern 1>)
+		<commands>
+		;;
+	<pattern 2>)
+		<other commands>
+		;;
+esac
+
+```
+example:
+
+```
+case $1 in
+	start)
+		echo starting
+		;;
+	stop)
+		echo stoping
+		;;
+	restart)
+		echo restarting
+		;;
+	*)
+		echo don\'t know
+		;;
+esac
+```
+
+
